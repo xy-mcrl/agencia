@@ -14,12 +14,10 @@ import br.com.senai.models.Escolaridade;
 
 public class App 
 {
-    
-    
+
     public static void main( String[] args )
     {
        
-
         Endereco endereco = new Endereco();
         endereco.cep = "64000000";
         endereco.logradouro = "Rua Porto, 3555";
@@ -34,6 +32,11 @@ public class App
         yasmin.naturalidade = Estado.PI.toString();
         yasmin.nacionalidade = "Brasil";
         yasmin.endereco = endereco;
+
+        Candidato maria = new Candidato();
+        maria.nomeCompleto = "Maria Clara Alves Nascimento";
+        maria.dataNascimento = LocalDate.of(2006, 10, 26);
+        
 
         Escolaridade e1 = new Escolaridade();
         e1.nomeCurso = "Sistema para Internet";
@@ -54,13 +57,14 @@ public class App
         yasmin.escolaridades = Arrays.asList(e1,e2);
 
         System.out.println("Nome Completo "+yasmin.nomeCompleto);
-        System.out.println("Idade: "+ Period.between(yasmin.dataNascimento, 
-            LocalDate.now()).getYears());
-        System.out.println("Endereço:" + yasmin.endereco.logradouro);
+        //System.out.println("Idade: "+ yasmin.calcularIdade() );
+        yasmin.calcularIdade();
+        System.out.println("É maior de idade: "+ yasmin.calcularIdade());
+
 
         for (Escolaridade escolaridade : Candidato.Escolaridade) {
             System.out.println(escolaridade.nomeCurso+" - "+escolaridade.nomeInstituicao);
+            
         }
-
     }
 }
