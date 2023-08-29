@@ -23,4 +23,4 @@
     Ex.:git@github.com:xy-mcrl/agencia.git
 
    ## Subir o projeto para GitHub
-      git push -u origin (ou brach atual)
+      git push -u origin (ou brach atual )
